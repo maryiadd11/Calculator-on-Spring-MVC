@@ -10,6 +10,6 @@
     Password<input name="password">
     <button> Submit </button>
 </form>
-${message}
+
 </body>
 </html>
