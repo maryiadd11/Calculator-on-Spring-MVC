@@ -1,0 +1,36 @@
+package by.tms.controller;
+
+import by.tms.entity.User;
+import by.tms.services.UserService;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
+
+
+@Controller
+@RequestMapping(path = "/home")
+public class RegistrationController {
+
+    private UserService userService;
+
+    public RegistrationController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @GetMapping(path = "/reg")
+    public ModelAndView registration(ModelAndView modelAndView){
+        modelAndView.setViewName("reg");
+        return modelAndView;
+    }
+
+    @PostMapping(path = "/reg")
+    public ModelAndView addRegistration(User user, ModelAndView modelAndView){
+        userService.createUser(user);
+        modelAndView.setViewName("index");
+        //modelAndView.setViewName("redirect:/home/index");
+        return modelAndView;
+    }
+
+}

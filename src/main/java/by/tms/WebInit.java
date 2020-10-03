@@ -1,4 +1,4 @@
-package by.tms.entity;
+package by.tms;
 
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
