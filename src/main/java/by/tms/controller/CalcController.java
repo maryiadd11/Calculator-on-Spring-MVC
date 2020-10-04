@@ -11,13 +11,10 @@ import org.springframework.web.servlet.ModelAndView;
 
 import javax.validation.Valid;
 
-
 @Controller
 @RequestMapping(path = "/home")
 public class CalcController {
 
-//    @Autowired
-//    private CalcService calcService;
     private final CalcService calcService;
 
     public CalcController(CalcService calcService) {

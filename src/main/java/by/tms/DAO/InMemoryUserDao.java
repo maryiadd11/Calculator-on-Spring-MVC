@@ -13,9 +13,9 @@ public class InMemoryUserDao implements UserDao{
     private List<User> users = new ArrayList<>();
 
     {
-        users.add(new User( "Test1", "test1", "123"));
-        users.add(new User( "Test2", "test2", "1234"));
-        users.add(new User( "Test3", "test3", "12345"));
+        users.add(new User( "Test1", "test1", "123456"));
+        users.add(new User( "Test2", "test2", "1234567"));
+        users.add(new User( "Test3", "test3", "12345678"));
     }
 
     @Override
