@@ -11,6 +11,9 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 public class Operation {
 
+    private static long idInc = 1;
+    private long id = idInc++;
+
     @NotNull
     private double num1;
 
@@ -29,7 +32,8 @@ public class Operation {
     @Override
     public String toString() {
         return "Operation{" +
-                "num1=" + num1 +
+                "id=" + id +
+                ", num1=" + num1 +
                 ", num2=" + num2 +
                 ", type='" + type + '\'' +
                 ", result=" + result +

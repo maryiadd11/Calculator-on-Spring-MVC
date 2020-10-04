@@ -27,5 +27,7 @@
 
 ${result}
 
+<br>
+<a href="/home/account">Посмотреть историю операций</a>
 </body>
 </html>

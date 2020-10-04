@@ -8,13 +8,18 @@
 <body>
 <c:if test="${sessionScope.authorized == null}">
     <p>Hello Guest!</p>
+    <br>
     <a href="/home/reg">Registration</a>
+    <br>
     <a href="/home/auth">Authorization</a>
 </c:if>
 
 <c:if test="${sessionScope.authorized != null}">
     <p>Hello, ${sessionScope.authorized.login}</p>
+    <br>
     <a href="/home/calc">Открыть Калькулятор</a>
+    <br>
+    <a href="/home/account">Посмотреть историю операций</a>
 </c:if>
 
 </body>

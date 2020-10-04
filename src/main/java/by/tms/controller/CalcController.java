@@ -2,6 +2,7 @@ package by.tms.controller;
 
 import by.tms.entity.Operation;
 import by.tms.services.CalcService;
+import by.tms.services.OperationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +17,11 @@ import javax.validation.Valid;
 public class CalcController {
 
     private final CalcService calcService;
+    private final OperationService operationService;
 
-    public CalcController(CalcService calcService) {
+    public CalcController(CalcService calcService, OperationService operationService) {
         this.calcService = calcService;
+        this.operationService = operationService;
     }
 
     @GetMapping(path = "/calc")
@@ -35,6 +38,7 @@ public class CalcController {
         } else {
             calcService.calc(operation);
             modelAndView.addObject("result", "Результат = " + operation.getResult());
+            operationService.createOperation(operation);
             modelAndView.setViewName("calc");
         }
         return modelAndView;
