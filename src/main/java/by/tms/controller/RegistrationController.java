@@ -28,8 +28,7 @@ public class RegistrationController {
     @PostMapping(path = "/reg")
     public ModelAndView addRegistration(User user, ModelAndView modelAndView){
         userService.createUser(user);
-        modelAndView.setViewName("index");
-        //modelAndView.setViewName("redirect:/home/index");
+        modelAndView.setViewName("redirect:/home/auth");
         return modelAndView;
     }
 

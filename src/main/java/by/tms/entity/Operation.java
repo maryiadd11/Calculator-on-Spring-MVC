@@ -1,50 +1,29 @@
 package by.tms.entity;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+import javax.validation.constraints.NotNull;
+
+@Setter
+@Getter
+@NoArgsConstructor
 public class Operation {
 
-
+    @NotNull
     private double num1;
+
+    @NotNull
     private double num2;
-    private String operationType;
+
+    private String type;
     private double result;
 
-    public Operation(double num1, double num2, String operationType, double result) {
+    public Operation(double num1, double num2, String type) {
         this.num1 = num1;
         this.num2 = num2;
-        this.operationType = operationType;
-        this.result = result;
-    }
-
-    public double getNum1() {
-        return num1;
-    }
-
-    public void setNum1(double num1) {
-        this.num1 = num1;
-    }
-
-    public double getNum2() {
-        return num2;
-    }
-
-    public void setNum2(double num2) {
-        this.num2 = num2;
-    }
-
-    public String getOperationType() {
-        return operationType;
-    }
-
-    public void setOperationType(String operationType) {
-        this.operationType = operationType;
-    }
-
-    public double getResult() {
-        return result;
-    }
-
-    public void setResult(double result) {
-        this.result = result;
+        this.type = type;
     }
 
     @Override
@@ -52,7 +31,7 @@ public class Operation {
         return "Operation{" +
                 "num1=" + num1 +
                 ", num2=" + num2 +
-                ", operationType='" + operationType + '\'' +
+                ", type='" + type + '\'' +
                 ", result=" + result +
                 '}';
     }

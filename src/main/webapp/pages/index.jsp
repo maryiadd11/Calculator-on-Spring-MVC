@@ -6,17 +6,15 @@
 </head>
 <body>
 <c:if test="${sessionScope.user == null}">
-    Hello Guest!
+    <p>Hello Guest!</p>
 </c:if>
 
 <c:if test="${sessionScope.user != null}">
-    ${sessionScope.user}
-    <br>
-    <a href="/home/calc">Calculation</a>
+    ${sessionScope.user.name}
+    <a href="/home/calc">Открыть Калькулятор</a>
 </c:if>
-<br>
+
 <a href="/home/reg">Registration</a>
-<br>
 <a href="/home/auth">Authorization</a>
 </body>
 </html>

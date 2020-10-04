@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpSession;
+
 @Controller
 @RequestMapping(path = "/home")
 public class AuthorizationController {
@@ -25,9 +27,10 @@ public class AuthorizationController {
     }
 
     @PostMapping(path = "/auth")
-    public ModelAndView addAuthorization(User user, ModelAndView modelAndView){
+    public ModelAndView addAuthorization(User user, ModelAndView modelAndView, HttpSession httpSession){
         if (userService.containsUserByLogin(user.getLogin()) && userService.containsUserByPassword(user.getPassword())) {
-            modelAndView.setViewName("calc");
+            httpSession.setAttribute("user", user);
+            modelAndView.setViewName("redirect:/home/index");
         }
         return modelAndView;
     }
